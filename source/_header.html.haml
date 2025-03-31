@@ -1,0 +1,24 @@
+%header.navbar.shadow-sm.bg-base-200
+  .flex-1
+    -# %svg.fill-current.h-8.w-8.mr-2{ width: '54',
+    -#                                 height: '54',
+    -#                                 viewBox: '0 0 54 54',
+    -#                                 xmlns: 'http://www.w3.org/2000/svg' }
+    -#   %path{ d: 'M13.5 22.1c1.8-7.2 6.3-10.8 13.5-10.8 10.8 0 12.15 ' \
+    -#             '8.1 17.55 9.45 3.6.9 6.75-.45 9.45-4.05-1.8 7.2-6.3 ' \
+    -#             '10.8-13.5 10.8-10.8 ' \
+    -#             '0-12.15-8.1-17.55-9.45-3.6-.9-6.75.45-9.45 4.05zM0 ' \
+    -#             '38.3c1.8-7.2 6.3-10.8 13.5-10.8 10.8 0 12.15 8.1 17.55 ' \
+    -#             '9.45 3.6.9 6.75-.45 9.45-4.05-1.8 7.2-6.3 10.8-13.5 ' \
+    -#             '10.8-10.8 0-12.15-8.1-17.55-9.45-3.6-.9-6.75.45-9.45 4.05z' }
+    %span.font-semibold.text-xl.tracking-tight JES
+  %nav.flex.items-center
+    %a.px-2.link.link-hover{ href: '/about' } About
+    %a.px-2.link.link-hover{ href: 'mailto:justin@jes.contact' } Contact
+    %a.px-2{ href: 'https://github.com/justins-engineering' }
+      %i.fa-brands.fa-github
+    .divider.divider-horizontal.mx-0.px-2
+    %label.px-2.swap.swap-rotate
+      %input.theme-controller{ type: 'checkbox', value: 'light' }
+      %i.fa-regular.fa-sun.swap-off
+      %i.fa-regular.fa-moon.swap-on

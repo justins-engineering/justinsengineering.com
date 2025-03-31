@@ -1,0 +1,9 @@
+/* @import '../../node_modules/@fortawesome/fontawesome-free/css/fontawesome.css' layer(base); */
+/* @import '../../node_modules/@fortawesome/fontawesome-free/css/regular.css' layer(base); */
+/* @import '../../node_modules/@fortawesome/fontawesome-free/css/brands.css' layer(base); */
+@import './fontawesome.css' layer(base);
+@import 'tailwindcss';
+
+@plugin 'daisyui'{
+  themes: light --default, dark --prefersdark;
+}
