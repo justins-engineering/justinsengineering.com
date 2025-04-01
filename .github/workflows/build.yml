@@ -10,14 +10,16 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: oven-sh/setup-bun@v2
-      - uses: ruby/setup-ruby@v1
-        with:
-          bundler-cache: true
 
-      - name: Bun install
-        run: bun install
+      - name: Tailwind CSS build
+        run: |
+          bun install
+          bunx @tailwindcss/cli -i ./source/stylesheets/site.css -o ./build/stylesheets/site.css --minify
 
       - name: Middleman Build
+        uses: ruby/setup-ruby@v1
+        with:
+          bundler-cache: true
         run: NO_CONTRACTS=true bundle exec middleman build
 
       - name: Upload static files as artifact

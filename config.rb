@@ -1,16 +1,26 @@
+# frozen_string_literal: true
+
 # Activate and configure extensions
 # https://middlemanapp.com/advanced/configuration/#configuring-extensions
 
 out_dir = './build'
 
-activate :external_pipeline,
-         name: :tailwindcss_build,
-         command: "bunx @tailwindcss/cli -i ./source/stylesheets/site.css -o #{out_dir}/stylesheets/site.css " \
-                  "#{build? ? '--minify' : '--watch'}",
-         latency: 2,
-         source: out_dir
+# Build-specific configuration
+# https://middlemanapp.com/advanced/configuration/#environment-specific-settings
 
-# activate :directory_indexes
+configure :development do
+  activate :external_pipeline,
+           name: :tailwindcss_build,
+           command: 'bunx @tailwindcss/cli -i ./source/stylesheets/site.css ' \
+                    "-o #{out_dir}/stylesheets/site.css #{build? ? '--minify' : '--watch'}",
+           latency: 2,
+           source: out_dir
+end
+
+configure :build do
+  activate :directory_indexes
+  ignore '/stylesheets/site.css'
+end
 
 # Development Files
 
@@ -28,16 +38,3 @@ page '/*.txt', layout: false
 # Helpers
 # Methods defined in the helpers block are available in templates
 # https://middlemanapp.com/basics/helper-methods/
-
-# helpers do
-#   def some_helper
-#     'Helping'
-#   end
-# end
-
-# Build-specific configuration
-# https://middlemanapp.com/advanced/configuration/#environment-specific-settings
-
-# configure :build do
-#   activate :minify_javascript
-# end
