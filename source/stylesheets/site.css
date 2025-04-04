@@ -1,9 +1,32 @@
-/* @import '../../node_modules/@fortawesome/fontawesome-free/css/fontawesome.css' layer(base); */
-/* @import '../../node_modules/@fortawesome/fontawesome-free/css/regular.css' layer(base); */
-/* @import '../../node_modules/@fortawesome/fontawesome-free/css/brands.css' layer(base); */
 @import './fontawesome.css' layer(base);
 @import 'tailwindcss';
 
-@plugin 'daisyui'{
-  themes: light --default, dark --prefersdark;
+@plugin 'daisyui';
+
+@plugin "daisyui/theme" {
+  name: "light";
+  default: true;
+  --color-accent: red;
+  --color-icon-primary: white;
+  --color-icon-secondary: black;
+}
+
+@plugin "daisyui/theme" {
+  name: "dark";
+  prefersdark: true;
+  --color-accent: aqua;
+  --color-icon-primary: black;
+  --color-icon-secondary: white;
+}
+
+#bg-icon{
+  fill: var(--color-icon-primary);
+}
+
+#icon-stroke{
+  stroke: var(--color-icon-secondary);
+}
+
+#icon-accent{
+  fill: var(--color-accent);
 }
