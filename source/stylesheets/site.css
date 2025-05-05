@@ -1,7 +1,11 @@
 @import './fontawesome.css' layer(base);
 @import 'tailwindcss';
 
-@plugin 'daisyui';
+@plugin 'daisyui' {
+  themes:
+    light --default,
+    dark;
+}
 
 @plugin "daisyui/theme" {
   name: "light";
@@ -13,7 +17,6 @@
 
 @plugin "daisyui/theme" {
   name: "dark";
-  prefersdark: true;
   --color-accent: aqua;
   --color-icon-primary: black;
   --color-icon-secondary: white;
