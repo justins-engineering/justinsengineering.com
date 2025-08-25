@@ -1,0 +1,15 @@
+[application]
+asset_dir = "public"
+
+[bundle]
+copyright = "Justin's Engineering Services, LLC"
+
+[web.app]
+
+# HTML title tag content
+title = "JES"
+
+[web.resource.dev]
+# Javascript code file
+# serve: [dev-server] only
+script = []

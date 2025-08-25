@@ -1,0 +1,76 @@
+/* @import './styling/main.css' layer(base); */
+@import 'tailwindcss';
+
+@plugin 'daisyui' {
+  themes:
+    light,
+    dark;
+}
+
+@plugin "daisyui/theme" {
+  name: "light";
+  prefersdark: false;
+  default: true;
+  color-scheme: "light";
+  --color-accent: red;
+  --color-icon-primary: white;
+  --color-icon-secondary: black;
+}
+
+@plugin "daisyui/theme" {
+  name: "dark";
+  prefersdark: true;
+  color-scheme: "dark";
+  --color-accent: aqua;
+  --color-icon-primary: black;
+  --color-icon-secondary: white;
+}
+
+#bg-icon{
+  fill: var(--color-icon-primary);
+}
+
+#icon-stroke{
+  stroke: var(--color-icon-secondary);
+}
+
+#icon-accent{
+  fill: var(--color-accent);
+}
+
+@font-face {
+  font-family: "SourceCodePro";
+  font-style: normal;
+  src: local("SourceCodeVF-Upright"), url("/assets/fonts/SourceCodeVF-Upright.otf.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "SourceCodePro";
+  font-style: italic;
+  src: local("SourceCodeVF-Italic"), url("/assets/fonts/SourceCodeVF-Italic.otf.woff2") format("woff2");
+}
+
+@theme {
+  --font-sans: "Courier Prime Sans", ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji",
+    "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --font-mono: "Courier Prime Sans", ui-monospace, "SFMono-Regular", "Menlo", "Monaco", "Consolas", "Liberation Mono",
+    "Courier New", monospace;
+}
+
+html {
+  @apply relative scroll-smooth;
+}
+
+body {
+  @apply bg-base-100 overflow-x-hidden;
+  font-family: "SourceCodePro";
+  height: 100vh;
+}
+
+#main {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  flex: 1;
+}
