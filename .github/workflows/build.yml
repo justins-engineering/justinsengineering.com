@@ -27,10 +27,6 @@ jobs:
   dioxus-bundle:
     needs: tailwindcss
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        toolchain:
-            - stable
     steps:
       - uses: actions/checkout@v4
 
@@ -51,13 +47,11 @@ jobs:
 
       - name: Rustup prepare
         run: |
-          rustup update ${{ matrix.toolchain }} && rustup default ${{ matrix.toolchain }}
+          rustup update stable && rustup default stable
           rustup target add wasm32-unknown-unknown
 
-      - name: Binstall dioxus-cli
-        run: |
-          cargo install cargo-binstall
-          cargo binstall dioxus-cli
+      - name: Install dioxus-cli
+        run: cargo install dioxus-cli
 
       - name: Cargo install
         run: cargo install --path .
@@ -76,6 +70,9 @@ jobs:
     timeout-minutes: 60
     steps:
       - uses: actions/checkout@v4
+      - uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: latest
 
       - name: Download assets
         uses: actions/download-artifact@v4
