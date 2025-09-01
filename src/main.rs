@@ -1,7 +1,7 @@
 #![forbid(unsafe_code)]
 
 use dioxus::prelude::*;
-use views::{Index, PageNotFound, Wrapper};
+use views::{Index, PageNotFound, Projects, Wrapper};
 
 mod components;
 mod views;
@@ -12,6 +12,8 @@ enum Route {
   #[layout(Wrapper)]
     #[route("/")]
     Index {},
+    #[route("/projects")]
+    Projects {},
     #[route("/:..route")]
     PageNotFound { route: Vec<String> },
 }

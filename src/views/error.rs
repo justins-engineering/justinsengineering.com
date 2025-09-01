@@ -4,7 +4,7 @@ use dioxus::prelude::*;
 #[component]
 pub fn PageNotFound(route: Vec<String>) -> Element {
   rsx! {
-    div { class: "text-center max-h-screen max-w-none",
+    div { class: "text-center flex-1 max-w-none",
       h1 { class: "text-9xl my-12", "404" }
       h2 { class: "text-2xl my-8", "Oops! Page not found." }
       h3 { class: "font-light my-8",

@@ -1,10 +1,17 @@
 [application]
+name = "justinsengineering"
 asset_dir = "public"
+out_dir = "dist"
 
 [bundle]
 copyright = "Justin's Engineering Services, LLC"
+identifier = "com.justinsengineering"
+publisher = "Justin's Engineering Services, LLC"
 
 [web.app]
+
+[web.watcher]
+index_on_404 = true
 
 # HTML title tag content
 title = "JES"

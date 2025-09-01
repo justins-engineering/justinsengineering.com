@@ -5,55 +5,51 @@ on:
     branches: [ main ]
 
 jobs:
-  build-HTML:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - uses: ruby/setup-ruby@v1
-        with:
-          bundler-cache: true
-
-      - name: Middleman Build
-        run: NO_CONTRACTS=true bundle exec middleman build
-
-      - name: Upload build
-        uses: actions/upload-artifact@v4
-        with:
-          name: build-artifact
-          path: ./build
-
-  build-CSS:
-    needs: build-HTML
+  tailwindcss:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
       - uses: oven-sh/setup-bun@v2
-
-      - name: Download artifacts
-        uses: actions/download-artifact@v4
         with:
-          name: build-artifact
-          path: ./build
+          bun-version: latest
 
       - name: Tailwind CSS build
         run: |
           bun install
-          bunx @tailwindcss/cli -i ./source/stylesheets/site.css -o ./build/stylesheets/site.css --minify
+          bunx @tailwindcss/cli -i ./assets/tailwind.css -o ./assets/styling/main.css --minify
 
-      - name: Upload static files as artifact
-        uses: actions/upload-pages-artifact@v3
+      - name: Upload tailwindcss
+        uses: actions/upload-artifact@v4
         with:
-          path: ./build
+          name: main-css
+          path: ./assets
 
-  deploy:
-    permissions:
-      pages: write
-      id-token: write
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
+  build-dioxus:
+    needs: tailwindcss
     runs-on: ubuntu-latest
-    needs: build-CSS
+    strategy:
+      matrix:
+        toolchain:
+            - stable
+        BUILD_TARGET: [release] # refers to a cargo profile
     steps:
-      - name: Deploy to GitHub Pages
-        uses: actions/deploy-pages@v4
+      - uses: actions/checkout@v4
+
+      - name: Download tailwindcss
+        uses: actions/download-artifact@v4
+        with:
+          name: main-css
+          path: ./assets
+
+      - name: Cache
+        uses: actions/cache@v4
+        with:
+          path: |
+            ~/.cargo/registry
+            ~/.cargo/git
+            target
+          key: ${{ runner.os }}-cargo-${{ hashFiles('**/Cargo.lock') }}
+
+      - run: rustup update ${{ matrix.toolchain }} && rustup default ${{ matrix.toolchain }}
+
+      - run: dx bundle --platform web

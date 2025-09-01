@@ -10,10 +10,10 @@ pub fn Logo() -> Element {
       view_box: "0 0 180 180",
       height: "50",
       width: "50",
-      path {
-        id: "bg-icon",
-        d: "M180 90a90 90 0 0 1-90 90A90 90 0 0 1 0 90 90 90 0 0 1 90 0a90 90 0 0 1 90 90",
-      }
+      // path {
+      //   id: "bg-icon",
+      //   d: "M180 90a90 90 0 0 1-90 90A90 90 0 0 1 0 90 90 90 0 0 1 90 0a90 90 0 0 1 90 90",
+      // }
       g { id: "icon-stroke", stroke_linejoin: "round",
         path {
           id: "icon-accent",
