@@ -1,10 +1,13 @@
 {
   "dependencies": {
-    "@tailwindcss/cli": "^4.1.5",
-    "daisyui": "^5.0.35",
-    "tailwindcss": "^4.1.5"
+    "@tailwindcss/cli": "^4.1.12",
+    "tailwindcss": "^4.1.12"
   },
+  "trustedDependencies": [
+    "@parcel/watcher",
+    "@tailwindcss/oxide"
+  ],
   "devDependencies": {
-    "@fortawesome/fontawesome-free": "^6.7.2"
+    "daisyui": "^5.0.54"
   }
 }

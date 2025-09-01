@@ -15,16 +15,19 @@
    bun install
    ```
 
-## Building
-Run
-```sh
-bundle exec middleman build
-```
-Output files will be placed in `./build/`
+### Tailwind
+1. Install npm: https://docs.npmjs.com/downloading-and-installing-node-js-and-npm
+2. Install the Tailwind CSS CLI: https://tailwindcss.com/docs/installation
+3. Run the following command in the root of the project to start the Tailwind CSS compiler:
 
-## Development
-To run the dev server:
-```sh
-bundle exec middleman
+```bash
+bunx @tailwindcss/cli -i ./assets/tailwind.css -o ./assets/styling/main.css --watch
 ```
-The dev server will accessible at http://localhost:4567
+
+### Serving Your App
+
+Run the following command in the root of your project to start developing with the default platform:
+
+```bash
+dx serve --platform web
+```

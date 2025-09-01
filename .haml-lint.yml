@@ -1,7 +1,0 @@
-skip_frontmatter: true
-
-linters:
-  ClassesBeforeIds:
-    EnforcedStyle: id
-  LineLength:
-    max: 100
