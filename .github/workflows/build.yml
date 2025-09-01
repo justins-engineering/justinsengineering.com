@@ -1,4 +1,4 @@
-name: build
+name: Deploy
 
 on:
   push:
@@ -24,7 +24,7 @@ jobs:
           name: main-css
           path: ./assets
 
-  build-dioxus:
+  dioxus-bundle:
     needs: tailwindcss
     runs-on: ubuntu-latest
     strategy:
@@ -71,6 +71,7 @@ jobs:
           path: ./dist
 
   deploy:
+    needs: dioxus-bundle
     runs-on: ubuntu-latest
     timeout-minutes: 60
     steps:
