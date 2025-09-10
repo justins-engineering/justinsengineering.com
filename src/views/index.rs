@@ -6,7 +6,7 @@ pub fn Index() -> Element {
   rsx! {
     div { class: "hero flex-1",
       div { class: "hero-content text-center flex-col items-stretch h-full lg:h-7/10 justify-around",
-        h1 { class: "text-5xl font-bold",
+        h1 {
           "Novel "
           span { class: "text-accent", "Cellular" }
           " Systems and "
