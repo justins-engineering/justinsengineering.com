@@ -1,5 +1,7 @@
-name = "my-worker"
-compatibility_date = "2025-09-01"
+name = "justinsengineering"
+compatibility_date = "2025-09-10"
+send_metrics = false
+workers_dev = false
 
 [assets]
 directory = "./dist/public/"
