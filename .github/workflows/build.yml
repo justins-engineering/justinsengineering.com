@@ -1,4 +1,4 @@
-name: Deploy
+name: Build and Deploy
 
 on:
   push:
@@ -50,10 +50,14 @@ jobs:
           rustup update stable && rustup default stable
           rustup target add wasm32-unknown-unknown
 
+      - name: Check curl
+        run: type -p curl >/dev/null || (sudo apt-get update && sudo apt-get install curl -y)
+
+      - name: Install cargo-binstall
+        run: curl -L --proto '=https' --tlsv1.2 -sSf https://raw.githubusercontent.com/cargo-bins/cargo-binstall/main/install-from-binstall-release.sh | bash
+
       - name: Binstall dioxus-cli
-        run: |
-          cargo install cargo-binstall
-          cargo binstall dioxus-cli
+        run: cargo binstall dioxus-cli
 
       - name: Cargo install
         run: cargo install --path .
