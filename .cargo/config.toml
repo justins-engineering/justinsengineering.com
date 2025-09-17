@@ -1,6 +1,3 @@
-[build]
-target = "wasm32-unknown-unknown"
-
 [profile.release]
 opt-level = "z"
 debug = false

@@ -1,7 +1,7 @@
 {
   "dependencies": {
     "@tailwindcss/cli": "^4.1.13",
-    "daisyui": "^5.1.10",
+    "daisyui": "^5.1.12",
     "tailwindcss": "^4.1.13"
   },
   "trustedDependencies": [
@@ -9,6 +9,6 @@
     "@tailwindcss/oxide"
   ],
   "devDependencies": {
-    "wrangler": "^4.35.0"
+    "wrangler": "^4.37.1"
   }
 }

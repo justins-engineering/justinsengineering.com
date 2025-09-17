@@ -21,10 +21,5 @@ title = "JES"
 [web.watcher]
 index_on_404 = true
 
-# HTML title tag content
-title = "JES"
-
-[web.resource.dev]
-# Javascript code file
-# serve: [dev-server] only
-script = []
+[web]
+pre_compress = false

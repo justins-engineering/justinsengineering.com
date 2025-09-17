@@ -22,5 +22,5 @@ bunx @tailwindcss/cli -i ./assets/tailwind.css -o ./assets/styling/main.css --wa
 Run the following command in the root of your project to start developing with the default platform:
 
 ```bash
-dx serve
+dx serve --ssg
 ```

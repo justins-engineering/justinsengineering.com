@@ -10,5 +10,5 @@ node_modules/
 **/*.rs.bk
 
 dist/**
-
 assets/styling/*
+.wrangler
