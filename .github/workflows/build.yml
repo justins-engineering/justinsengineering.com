@@ -62,7 +62,7 @@ jobs:
       - name: Cargo install
         run: cargo install --path .
 
-      - run: dx build --web --ssg --release
+      - run: dx build --web --ssg --release --debug-symbols=false
 
       - name: Upload assets
         uses: actions/upload-artifact@v4
@@ -86,7 +86,7 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           name: dist
-          path: ./dist/public
+          path: ./target/dx/justinsengineering/release/web/public
 
       - name: Deploy
         uses: cloudflare/wrangler-action@v3

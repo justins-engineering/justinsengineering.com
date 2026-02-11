@@ -1,6 +1,6 @@
 [package]
 name = "justinsengineering"
-version = "0.2.0"
+version = "0.2.1"
 authors = ["JES <code@jes.contact>"]
 edition = "2024"
 
