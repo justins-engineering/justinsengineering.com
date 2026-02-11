@@ -62,13 +62,13 @@ jobs:
       - name: Cargo install
         run: cargo install --path .
 
-      - run: dx bundle --release --platform web --ssg
+      - run: dx build --web --ssg --release
 
       - name: Upload assets
         uses: actions/upload-artifact@v4
         with:
           name: dist
-          path: ./dist/public
+          path: ./target/dx/justinsengineering/release/web/public
 
   deploy:
     needs: dioxus-bundle

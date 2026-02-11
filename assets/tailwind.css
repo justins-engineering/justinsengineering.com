@@ -90,13 +90,13 @@
 @font-face {
   font-family: "SourceCodePro";
   font-style: normal;
-  src: local("SourceCodeVF-Upright"), url("/assets/fonts/SourceCodeVF-Upright.otf.woff2") format("woff2");
+  src: local("SourceCodeVF-Upright"), url("/public/fonts/SourceCodeVF-Upright.otf.woff2") format("woff2");
 }
 
 @font-face {
   font-family: "SourceCodePro";
   font-style: italic;
-  src: local("SourceCodeVF-Italic"), url("/assets/fonts/SourceCodeVF-Italic.otf.woff2") format("woff2");
+  src: local("SourceCodeVF-Italic"), url("/public/fonts/SourceCodeVF-Italic.otf.woff2") format("woff2");
 }
 
 @theme {

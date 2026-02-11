@@ -1,8 +1,8 @@
 name = "justinsengineering"
-compatibility_date = "2025-09-17"
+compatibility_date = "2026-02-11"
 send_metrics = false
 workers_dev = false
 
 [assets]
-directory = "./dist/public/"
+directory = "./target/dx/justinsengineering/release/web/public"
 not_found_handling = "single-page-application"

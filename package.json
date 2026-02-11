@@ -1,14 +1,14 @@
 {
   "dependencies": {
-    "@tailwindcss/cli": "^4.1.13",
-    "daisyui": "^5.1.12",
-    "tailwindcss": "^4.1.13"
+    "@tailwindcss/cli": "^4.1.18",
+    "daisyui": "^5.5.18",
+    "tailwindcss": "^4.1.18"
   },
   "trustedDependencies": [
     "@parcel/watcher",
     "@tailwindcss/oxide"
   ],
   "devDependencies": {
-    "wrangler": "^4.37.1"
+    "wrangler": "^4.64.0"
   }
 }
