@@ -111,12 +111,12 @@ html {
 }
 
 body {
-  @apply bg-base-100 overflow-x-hidden;
   font-family: "SourceCodePro";
   height: 100vh;
 }
 
 #main {
+  @apply bg-base-100 overflow-x-hidden;
   height: 100%;
   display: flex;
   flex-direction: column;

@@ -5,7 +5,7 @@
 ### Requirements
 
 - [Bun](https://bun.com/get)
-- [Dioxus CLI](https://dioxuslabs.com/learn/0.6/getting_started/)
+- [Dioxus CLI](https://dioxuslabs.com/learn/0.7/getting_started/)
 
 ### Tailwind CSS
 
