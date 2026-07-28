@@ -1,6 +1,6 @@
 use dioxus::prelude::*;
 use dioxus_free_icons::Icon;
-use dioxus_free_icons::icons::ld_icons::{LdContainer, LdGithub};
+use dioxus_free_icons::icons::ld_icons::{LdContainer, LdGithub, LdGlobe, LdPackage};
 
 #[component]
 pub fn Projects() -> Element {
@@ -10,6 +10,90 @@ pub fn Projects() -> Element {
       section { id: "software",
         h1 { "Software" }
         div { class: "divider mt-0" }
+
+        div { class: "card bg-base-200 my-6",
+          div { class: "card-body",
+            article { class: "flex-1",
+              h2 { class: "text-2xl card-title mb-4", "PidgeIoT" }
+              p { class: "my-4",
+                "Our flagship product: an open-source (AGPL-3.0) IoT device management platform,
+                publicly launched in July 2026 and free while in beta. Device provisioning with
+                per-device Ed25519 keys, configuration push via device shadows, telemetry with
+                queryable history, email alerts, and over-the-air firmware updates — built
+                entirely in Rust, with a Cloudflare Workers + Durable Objects backend and a
+                Dioxus WebAssembly dashboard."
+              }
+            }
+            div { class: "card-actions justify-center-safe lg:justify-start",
+              a {
+                class: "btn btn-soft",
+                href: "https://pidgeiot.com",
+                aria_label: "pidgeiot.com",
+                Icon { icon: LdGlobe }
+              }
+              a {
+                class: "btn btn-soft",
+                href: "https://github.com/justins-engineering/pidgeiot",
+                aria_label: "PidgeIoT on GitHub",
+                Icon { icon: LdGithub }
+              }
+            }
+          }
+        }
+
+        div { class: "card bg-base-200 my-6",
+          div { class: "card-body",
+            article { class: "flex-1",
+              h2 { class: "text-2xl card-title mb-4", "Pigeon Device Library" }
+              p { class: "my-4",
+                "An open-source Zephyr RTOS device library for connecting firmware to PidgeIoT:
+                device shadows, telemetry, device logs, and FOTA over HTTPS, WebSocket, or CoAP.
+                The companion pigeon-examples repository carries ready-to-build samples for
+                Nordic nRF9160/nRF9151 cellular boards, the ESP32-C6, and Zephyr's native_sim."
+              }
+            }
+            div { class: "card-actions justify-center-safe lg:justify-start",
+              a {
+                class: "btn btn-soft",
+                href: "https://github.com/justins-engineering/pigeon",
+                Icon { icon: LdGithub }
+                "pigeon"
+              }
+              a {
+                class: "btn btn-soft",
+                href: "https://github.com/justins-engineering/pigeon-examples",
+                Icon { icon: LdGithub }
+                "pigeon-examples"
+              }
+            }
+          }
+        }
+
+        div { class: "card bg-base-200 my-6",
+          div { class: "card-body",
+            article { class: "flex-1",
+              h2 { class: "text-2xl card-title mb-4", "Kratos Client Rust" }
+              p { class: "my-4",
+                "A maintained fork of Ory's generated Kratos API client that uses the browser's
+                native Fetch API instead of reqwest when building for WASM, published on
+                crates.io as ory-kratos-client-wasm."
+              }
+            }
+            div { class: "card-actions justify-center-safe lg:justify-start",
+              a {
+                class: "btn btn-soft",
+                href: "https://github.com/justins-engineering/kratos-client-rust",
+                Icon { icon: LdGithub }
+              }
+              a {
+                class: "btn btn-soft",
+                href: "https://crates.io/crates/ory-kratos-client-wasm",
+                aria_label: "ory-kratos-client-wasm on crates.io",
+                Icon { icon: LdPackage }
+              }
+            }
+          }
+        }
 
         div { class: "card lg:card-side bg-base-200 my-6",
           figure { class: "lg:w-1/2",
@@ -50,13 +134,13 @@ pub fn Projects() -> Element {
               }
               p { class: "my-4",
 
-                "All runtime code is compiled to WASM using a "
+                "All runtime code is compiled to WASM using our "
                 a {
                   class: "link",
-                  href: "https://github.com/justins-engineering/kratos-client-rust",
-                  "fork"
+                  href: "https://crates.io/crates/ory-kratos-client-wasm",
+                  "ory-kratos-client-wasm"
                 }
-                " (created by us) of the "
+                " crate (see Kratos Client Rust above), a fork of the "
                 a {
                   class: "link",
                   href: "https://github.com/ory/kratos-client-rust",
@@ -104,7 +188,7 @@ pub fn Projects() -> Element {
               }
               p { class: "my-4",
                 "A Zephyr based firmware for a real-time, cellular connected, solar-powered
-                departure board. Writen for a Nordic nRF9160 based system."
+                departure board. Written for a Nordic nRF9160 based system."
               }
               p { class: "my-4",
                 h3 { "Features:" }
