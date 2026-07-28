@@ -158,6 +158,17 @@ pub fn Index() -> Element {
           }
         }
       }
+
+      section { id: "about", class: "py-8",
+        h1 { "About" }
+        div { class: "divider mt-0" }
+        p { class: "my-4 text-balance",
+          "Justin's Engineering Services, LLC is the solo consultancy of Justin Forgue,
+          Founder & Principal, based in western Massachusetts, US. For project inquiries, "
+          a { class: "link", href: "mailto:justin@jes.contact", "get in touch" }
+          "."
+        }
+      }
     }
   }
 }
