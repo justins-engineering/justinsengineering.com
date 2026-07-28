@@ -5,7 +5,7 @@ pub fn Logo() -> Element {
   rsx! {
     svg {
       role: "img",
-      "aria-label": "Pigeon Wireless logo",
+      "aria-label": "Justin's Engineering Services logo",
       xmlns: "http://www.w3.org/2000/svg",
       view_box: "0 0 180 180",
       height: "50",
