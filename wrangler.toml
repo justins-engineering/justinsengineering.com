@@ -1,5 +1,5 @@
 name = "justinsengineering"
-compatibility_date = "2026-02-20"
+compatibility_date = "2026-07-29"
 send_metrics = false
 workers_dev = false
 
