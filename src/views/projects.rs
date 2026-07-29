@@ -178,8 +178,8 @@ pub fn Projects() -> Element {
           }
         }
 
-        div { class: "card lg:card-side lg:flex-row-reverse bg-base-200 my-6",
-          figure { class: "lg:w-1/2 lg:rounded-r-lg! lg:rounded-l-none!",
+        div { class: "card lg:card-side bg-base-200 my-6",
+          figure { class: "lg:w-1/2",
             img {
               src: asset!("assets/images/departure-sign.jpg"),
               alt: "Solar-powered cellular departure board showing real-time bus departures",
@@ -256,8 +256,8 @@ pub fn Projects() -> Element {
           }
         }
 
-        div { class: "card lg:card-side lg:flex-row-reverse bg-base-200 my-6",
-          figure { class: "lg:w-1/2 lg:rounded-r-lg! lg:rounded-l-none!",
+        div { class: "card lg:card-side bg-base-200 my-6",
+          figure { class: "lg:w-1/2",
             img {
               src: asset!("assets/images/neopixel-seven-segment-display.png"),
               alt: "Neopixel three-digit seven-segment display circuit board render",
