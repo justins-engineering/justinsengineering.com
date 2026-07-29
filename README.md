@@ -40,7 +40,7 @@ bunx @tailwindcss/cli -i ./assets/tailwind.css -o ./assets/styling/main.css --mi
 2. Run the following command in the root of your project to bundle the assets:
 
 ```sh
-dx build --web --ssg --release --debug-symbols=false
+dx build --web --ssg --force-sequential --release --debug-symbols=false
 ```
 
 ### Serving The App
