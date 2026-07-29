@@ -16,7 +16,7 @@ icon = [
 ]
 
 [web.app]
-title = "JES"
+title = "Justin's Engineering Services | IoT & Embedded Rust"
 
 [web.watcher]
 index_on_404 = true

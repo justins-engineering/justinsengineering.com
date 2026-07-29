@@ -1,3 +1,4 @@
+use crate::components::PageMeta;
 use dioxus::prelude::*;
 use dioxus_free_icons::Icon;
 use dioxus_free_icons::icons::ld_icons::{LdContainer, LdGithub, LdGlobe, LdPackage};
@@ -5,16 +6,22 @@ use dioxus_free_icons::icons::ld_icons::{LdContainer, LdGithub, LdGlobe, LdPacka
 #[component]
 pub fn Projects() -> Element {
   rsx! {
+    PageMeta {
+      title: "Projects | Justin's Engineering Services",
+      description: "Open-source software and hardware projects: PidgeIoT device management, the pigeon Zephyr library, Rust WASM clients, and custom nRF9160 hardware designs.",
+      path: "/projects",
+    }
     div { class: "flex-1 py-8 px-2 lg:px-8",
+      h1 { class: "sr-only", "Projects" }
 
       section { id: "software",
-        h1 { "Software" }
+        h2 { class: "text-5xl font-bold", "Software" }
         div { class: "divider mt-0" }
 
         div { class: "card bg-base-200 my-6",
           div { class: "card-body",
             article { class: "flex-1",
-              h2 { class: "text-2xl card-title mb-4", "PidgeIoT" }
+              h3 { class: "text-2xl card-title mb-4", "PidgeIoT" }
               p { class: "my-4",
                 "Our flagship product: an open-source (AGPL-3.0) IoT device management platform,
                 publicly launched in July 2026 and free while in beta. Device provisioning with
@@ -44,7 +51,7 @@ pub fn Projects() -> Element {
         div { class: "card bg-base-200 my-6",
           div { class: "card-body",
             article { class: "flex-1",
-              h2 { class: "text-2xl card-title mb-4", "Pigeon Device Library" }
+              h3 { class: "text-2xl card-title mb-4", "Pigeon Device Library" }
               p { class: "my-4",
                 "An open-source Zephyr RTOS device library for connecting firmware to PidgeIoT:
                 device shadows, telemetry, device logs, and FOTA over HTTPS, WebSocket, or CoAP.
@@ -72,7 +79,7 @@ pub fn Projects() -> Element {
         div { class: "card bg-base-200 my-6",
           div { class: "card-body",
             article { class: "flex-1",
-              h2 { class: "text-2xl card-title mb-4", "Kratos Client Rust" }
+              h3 { class: "text-2xl card-title mb-4", "Kratos Client Rust" }
               p { class: "my-4",
                 "A maintained fork of Ory's generated Kratos API client that uses the browser's
                 native Fetch API instead of reqwest when building for WASM, published on
@@ -99,12 +106,12 @@ pub fn Projects() -> Element {
           figure { class: "lg:w-1/2",
             img {
               src: asset!("assets/images/kratos-selfservice-wasm.png"),
-              alt: "kratos-selfservice-wasm",
+              alt: "Screenshot of the Kratos Selfservice WASM sign-in user interface",
             }
           }
           div { class: "card-body lg:w-1/2",
             article { class: "flex-1",
-              h2 { class: "text-2xl card-title mb-4", "Kratos Selfservice WASM" }
+              h3 { class: "text-2xl card-title mb-4", "Kratos Selfservice WASM" }
               p { class: "my-4",
                 "An SPA recreation of "
                 a {
@@ -178,20 +185,20 @@ pub fn Projects() -> Element {
           figure { class: "lg:w-1/2 lg:rounded-r-lg! lg:rounded-l-none!",
             img {
               src: asset!("assets/images/departure-sign.jpg"),
-              alt: "Departure Board",
+              alt: "Solar-powered cellular departure board showing real-time bus departures",
             }
           }
           div { class: "card-body lg:w-1/2",
             article { class: "flex-1",
-              h2 { class: "text-2xl card-title mb-4",
+              h3 { class: "text-2xl card-title mb-4",
                 "Real-time Cellular Departure Board"
               }
               p { class: "my-4",
                 "A Zephyr based firmware for a real-time, cellular connected, solar-powered
                 departure board. Written for a Nordic nRF9160 based system."
               }
-              p { class: "my-4",
-                h3 { "Features:" }
+              div { class: "my-4",
+                h4 { class: "text-lg", "Features:" }
                 ul { class: "list-outside list-disc pl-8",
                   li { "Runs on Zephyr RTOS" }
                   ul { class: "list-outside list-disc pl-8",
@@ -229,19 +236,19 @@ pub fn Projects() -> Element {
       }
 
       section { id: "hardware", class: "py-8",
-        h1 { "Hardware" }
+        h2 { class: "text-5xl font-bold", "Hardware" }
         div { class: "divider mt-0" }
 
         div { class: "card lg:card-side bg-base-200 my-6",
           figure { class: "lg:w-1/2",
             img {
               src: asset!("assets/images/neopixel-6-display-controller.png"),
-              alt: "neopixel 6 display controller",
+              alt: "Neopixel 6 display controller circuit board render",
             }
           }
           div { class: "card-body lg:w-1/2",
             article { class: "flex-1",
-              h2 { class: "text-2xl card-title mb-4", "Neopixel 6 Display Controller" }
+              h3 { class: "text-2xl card-title mb-4", "Neopixel 6 Display Controller" }
               p { class: "my-4",
                 "A control board for up to 6 NZR (neopixel/WS28*) displays.
                 This control board was designed to be used with a "
@@ -273,12 +280,12 @@ pub fn Projects() -> Element {
           figure { class: "lg:w-1/2 lg:rounded-r-lg! lg:rounded-l-none!",
             img {
               src: asset!("assets/images/neopixel-seven-segment-display.png"),
-              alt: "neopixel seven segment display",
+              alt: "Neopixel three-digit seven-segment display circuit board render",
             }
           }
           div { class: "card-body lg:w-1/2",
             article { class: "flex-1",
-              h2 { class: "text-2xl card-title mb-4", "Neopixel Seven Segment Display" }
+              h3 { class: "text-2xl card-title mb-4", "Neopixel Seven Segment Display" }
               p { class: "my-4",
                 "A large, daisy chain-able, 3 digit seven-segment display board. Constructed with "
                 a {
@@ -288,8 +295,8 @@ pub fn Projects() -> Element {
                 }
                 " LED pixels and a 5V fixed output, synchronous buck converter."
               }
-              p { class: "my-4",
-                h3 { "Features:" }
+              div { class: "my-4",
+                h4 { class: "text-lg", "Features:" }
                 ul { class: "list-outside list-disc pl-8",
                   li { "63 total WS2813B-V5 LED pixels" }
                   li { "3 WS2813B-V5 LED pixels per segment" }

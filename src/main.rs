@@ -38,6 +38,27 @@ fn main() {
   dioxus::LaunchBuilder::new()
     // Set the server config only if we are building the server target
     .with_cfg(server_only! {
+        // Without --force-sequential, dx builds the client and server concurrently and
+        // launches this binary for SSG as soon as the server target is compiled.
+        // ServeConfig::builder() reads public/index.html at construction, so wait until
+        // the client build has written a fresh template (present, complete, and not a
+        // previously prerendered page) or SSG falls back to a bare template with no
+        // stylesheet or wasm bootstrap. CI passes --force-sequential, which makes this
+        // exit immediately; the loop protects local `dx build --ssg` runs without it.
+        let index_html = std::env::current_exe()
+            .unwrap()
+            .parent()
+            .unwrap()
+            .join("public")
+            .join("index.html");
+        for _ in 0..600 {
+            match std::fs::read_to_string(&index_html) {
+                Ok(html)
+                    if html.contains("</html>")
+                        && !html.contains("initial_dioxus_hydration_data") => break,
+                _ => std::thread::sleep(std::time::Duration::from_millis(100)),
+            }
+        }
         ServeConfig::builder()
             // Enable incremental rendering
             .incremental(

@@ -90,12 +90,14 @@
 @font-face {
   font-family: "SourceCodePro";
   font-style: normal;
+  font-display: swap;
   src: local("SourceCodeVF-Upright"), url("/fonts/SourceCodeVF-Upright.otf.woff2") format("woff2");
 }
 
 @font-face {
   font-family: "SourceCodePro";
   font-style: italic;
+  font-display: swap;
   src: local("SourceCodeVF-Italic"), url("/fonts/SourceCodeVF-Italic.otf.woff2") format("woff2");
 }
 

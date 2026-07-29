@@ -62,7 +62,12 @@ jobs:
       - name: Cargo install
         run: cargo install --path .
 
-      - run: dx build --web --ssg --release --debug-symbols=false
+      # --force-sequential finishes the client build (which writes the templated
+      # index.html) before the server target builds and runs SSG. Without it the
+      # two build concurrently and the SSG server can read a missing/stale
+      # index.html at startup, silently prerendering every page against a bare
+      # template with no stylesheet or wasm bootstrap.
+      - run: dx build --web --ssg --force-sequential --release --debug-symbols=false
 
       - name: Upload assets
         uses: actions/upload-artifact@v4

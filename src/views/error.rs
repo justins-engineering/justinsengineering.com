@@ -4,6 +4,8 @@ use dioxus::prelude::*;
 #[component]
 pub fn PageNotFound(route: Vec<String>) -> Element {
   rsx! {
+    document::Title { "Page Not Found | Justin's Engineering Services" }
+    document::Meta { name: "robots", content: "noindex" }
     div { class: "text-center flex-1 max-w-none",
       h1 { class: "text-9xl my-12", "404" }
       h2 { class: "my-8", "Oops! Page not found." }
