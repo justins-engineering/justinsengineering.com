@@ -15,7 +15,9 @@ pub fn Navbar() -> Element {
           href: "mailto:justin@jes.contact",
           "Contact"
         }
-        a { href: "https://github.com/justins-engineering",
+        a {
+          href: "https://github.com/justins-engineering",
+          aria_label: "Justin's Engineering on GitHub",
           Icon { icon: LdGithub }
         }
         div { class: "divider divider-horizontal mx-1" }

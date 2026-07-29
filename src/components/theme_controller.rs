@@ -10,7 +10,12 @@ pub fn ThemeController() -> Element {
   });
   rsx! {
     label { class: "swap swap-rotate",
-      input { name: "theme-toggle", r#type: "checkbox", value: "dark" }
+      input {
+        name: "theme-toggle",
+        r#type: "checkbox",
+        value: "dark",
+        aria_label: "Toggle dark mode",
+      }
       Icon { class: "swap-on", icon: LdSun }
       Icon { class: "swap-off", icon: LdMoon }
     }

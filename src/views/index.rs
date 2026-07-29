@@ -72,7 +72,7 @@ pub fn Index() -> Element {
       path: "/",
     }
     document::Script { r#type: "application/ld+json", {JSON_LD} }
-    div { class: "flex-1 py-8 px-2 lg:px-8",
+    main { class: "flex-1 py-8 px-2 lg:px-8",
       div { class: "hero py-12 lg:py-20",
         div { class: "hero-content text-center flex-col items-stretch justify-around",
           h1 {

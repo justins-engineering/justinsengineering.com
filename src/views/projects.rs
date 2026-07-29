@@ -20,9 +20,9 @@ pub fn Projects() -> Element {
     PageMeta {
       title: "Projects | Justin's Engineering Services",
       description: "Open-source software and hardware projects: PidgeIoT device management, the pigeon Zephyr library, Rust WASM clients, and custom nRF9160 hardware designs.",
-      path: "/projects",
+      path: "/projects/",
     }
-    div { class: "flex-1 py-8 px-2 lg:px-8",
+    main { class: "flex-1 py-8 px-2 lg:px-8",
       header { class: "pb-4",
         h1 { "Projects" }
         p { class: "my-4 text-balance",
