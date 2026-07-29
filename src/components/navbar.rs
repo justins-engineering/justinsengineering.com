@@ -7,9 +7,9 @@ use dioxus_free_icons::icons::ld_icons::LdGithub;
 #[component]
 pub fn Navbar() -> Element {
   rsx! {
-    header { class: "navbar shadow-sm bg-base-200",
+    header { class: "navbar shadow-sm bg-base-200 lg:px-8",
       Link { to: Route::Index {}, class: "flex-1", aria_label: "Home", Logo {} }
-      nav { class: "flex items-center justify-between py-2 gap-x-3",
+      nav { class: "flex items-center justify-between py-2 gap-x-4",
         a {
           class: "link link-hover mr-1",
           href: "mailto:justin@jes.contact",
@@ -18,7 +18,7 @@ pub fn Navbar() -> Element {
         a { href: "https://github.com/justins-engineering",
           Icon { icon: LdGithub }
         }
-        div { class: "divider divider-horizontal mx-0" }
+        div { class: "divider divider-horizontal mx-1" }
         ThemeController {}
       }
     }
