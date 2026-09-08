@@ -108,7 +108,6 @@ pub fn Index() -> Element {
             a {
               class: "btn btn-accent lg:w-3/16",
               href: "#transit",
-              aria_label: "For transit agencies",
               "Transit"
             }
           }

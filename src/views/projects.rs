@@ -19,7 +19,7 @@ pub fn Projects() -> Element {
   rsx! {
     PageMeta {
       title: "Projects | Justin's Engineering Services",
-      description: "Open-source software and hardware projects: PidgeIoT device management, PVTA's real-time solar departure signs, the pigeon Zephyr library, Rust WASM clients, and custom nRF9160 hardware designs.",
+      description: "Open-source software and hardware projects: PidgeIoT device management, PVTA's solar real-time departure signs, the pigeon Zephyr library, Rust WASM clients, and custom nRF9160 hardware designs.",
       path: "/projects/",
     }
     main { class: "flex-1 py-8 px-2 lg:px-8",
