@@ -6,3 +6,12 @@ workers_dev = false
 [assets]
 directory = "./target/dx/justinsengineering/release/web/public"
 not_found_handling = "single-page-application"
+
+# Review copies go to a separate worker on workers.dev; production stays the CI deploy above.
+[env.staging]
+name = "justinsengineering-staging"
+workers_dev = true
+
+[env.staging.assets]
+directory = "./target/dx/justinsengineering/release/web/public"
+not_found_handling = "single-page-application"
