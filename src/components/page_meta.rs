@@ -3,7 +3,7 @@ use dioxus::prelude::*;
 pub const BASE_URL: &str = "https://justinsengineering.com";
 pub const SITE_NAME: &str = "Justin's Engineering Services";
 const OG_IMAGE: &str = "https://justinsengineering.com/images/og.png";
-const OG_IMAGE_ALT: &str = "Justin's Engineering Services — Open-Source IoT & Embedded Rust";
+const OG_IMAGE_ALT: &str = "Justin's Engineering Services: Open-Source IoT & Embedded Rust";
 
 /// Renders the per-page `<head>` metadata: title, description, canonical URL,
 /// and Open Graph / Twitter card tags. `path` is the route path with a leading
