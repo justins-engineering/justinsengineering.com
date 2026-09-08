@@ -19,14 +19,14 @@ pub fn Projects() -> Element {
   rsx! {
     PageMeta {
       title: "Projects | Justin's Engineering Services",
-      description: "Open-source software and hardware projects: PidgeIoT device management, the pigeon Zephyr library, Rust WASM clients, and custom nRF9160 hardware designs.",
+      description: "Open-source software and hardware projects: PidgeIoT device management, PVTA's real-time solar departure signs, the pigeon Zephyr library, Rust WASM clients, and custom nRF9160 hardware designs.",
       path: "/projects/",
     }
     main { class: "flex-1 py-8 px-2 lg:px-8",
       header { class: "pb-4",
         h1 { "Projects" }
         p { class: "my-4 text-balance",
-          "Open-source software and hardware we build and maintain — everything here lives on "
+          "Open-source software and hardware we build and maintain. Everything here lives on "
           a { class: "link", href: "https://github.com/justins-engineering", "GitHub" }
           ". Start with PidgeIoT, our flagship platform."
         }
@@ -49,7 +49,7 @@ pub fn Projects() -> Element {
               p { class: "my-2",
                 "Provision devices with per-device Ed25519 keys, push configuration through
                 device shadows, collect queryable telemetry, send email alerts, and ship
-                over-the-air firmware updates — all from one open-source platform."
+                over-the-air firmware updates, all from one open-source platform."
               }
             }
             div { class: "card-actions justify-center-safe lg:justify-start",
@@ -62,6 +62,45 @@ pub fn Projects() -> Element {
               a {
                 class: "btn btn-soft",
                 href: "https://github.com/justins-engineering/pidgeiot",
+                Icon { icon: LdGithub }
+                "GitHub"
+              }
+            }
+          }
+        }
+
+        div { class: "card lg:card-side bg-base-200 my-6",
+          figure { class: "lg:w-1/2",
+            img {
+              src: asset!("assets/images/departure-sign.jpg"),
+              alt: "Solar-powered cellular departure board showing real-time bus departures",
+            }
+          }
+          div { class: "card-body lg:w-1/2",
+            article { class: "flex-1",
+              h3 { class: "text-2xl card-title", "Real-time Cellular Departure Board" }
+              p { class: "text-lg font-medium mt-2",
+                "A solar-powered transit sign, updated in real time over LTE."
+              }
+              Tags { tags: vec!["Zephyr RTOS", "nRF9160", "MCUboot", "FOTA"] }
+              p { class: "my-2",
+                "Three in service at PVTA (Amherst, Holyoke, Springfield) since 2023. The firmware
+                reads the agency's prediction API directly (Avail InfoPoint, then Swiftly);
+                PidgeIoT manages the devices and never holds transit data."
+              }
+              ul { class: "list-outside list-disc pl-8 my-2",
+                li { "Zephyr RTOS with the open-source MCUboot bootloader" }
+                li { "Firmware built, signed, and released automatically on GitHub" }
+                li {
+                  "Remote updates downloaded over the cellular network and verified
+                  on-device before install"
+                }
+              }
+            }
+            div { class: "card-actions justify-center-safe lg:justify-start",
+              a {
+                class: "btn btn-soft",
+                href: "https://github.com/umts/embedded-departure-board",
                 Icon { icon: LdGithub }
                 "GitHub"
               }
@@ -85,7 +124,7 @@ pub fn Projects() -> Element {
               p { class: "my-2",
                 "Device shadows, telemetry, device logs, and firmware updates for your own
                 firmware. The companion examples repository has ready-to-build samples for
-                Nordic cellular boards, the ESP32-C6, and Zephyr's native_sim — no hardware
+                Nordic cellular boards, the ESP32-C6, and Zephyr's native_sim. No hardware is
                 required to try it."
               }
             }
@@ -101,112 +140,6 @@ pub fn Projects() -> Element {
                 href: "https://github.com/justins-engineering/pigeon-examples",
                 Icon { icon: LdGithub }
                 "pigeon-examples"
-              }
-            }
-          }
-        }
-
-        div { class: "card bg-base-200 my-6",
-          div { class: "card-body",
-            article { class: "flex-1",
-              h3 { class: "text-2xl card-title", "Kratos Client Rust" }
-              p { class: "text-lg font-medium mt-2",
-                "An Ory Kratos API client that works in the browser."
-              }
-              Tags { tags: vec!["Rust", "WASM", "crates.io"] }
-              p { class: "my-2",
-                "A maintained fork of Ory's generated Kratos client that swaps reqwest for the
-                browser's native Fetch API when targeting WebAssembly. Published on crates.io
-                as ory-kratos-client-wasm."
-              }
-            }
-            div { class: "card-actions justify-center-safe lg:justify-start",
-              a {
-                class: "btn btn-soft",
-                href: "https://github.com/justins-engineering/kratos-client-rust",
-                Icon { icon: LdGithub }
-                "GitHub"
-              }
-              a {
-                class: "btn btn-soft",
-                href: "https://crates.io/crates/ory-kratos-client-wasm",
-                Icon { icon: LdPackage }
-                "crates.io"
-              }
-            }
-          }
-        }
-
-        div { class: "card lg:card-side bg-base-200 my-6",
-          figure { class: "lg:w-1/2",
-            img {
-              src: asset!("assets/images/kratos-selfservice-wasm.png"),
-              alt: "Screenshot of the Kratos Selfservice WASM sign-in user interface",
-            }
-          }
-          div { class: "card-body lg:w-1/2",
-            article { class: "flex-1",
-              h3 { class: "text-2xl card-title", "Kratos Selfservice WASM" }
-              p { class: "text-lg font-medium mt-2", "Kratos self-service UI, fully client-side." }
-              Tags { tags: vec!["Dioxus", "Tailwind CSS", "daisyUI", "Docker"] }
-              p { class: "my-2",
-                "A single-page recreation of Ory's "
-                a {
-                  class: "link",
-                  href: "https://github.com/ory/kratos-selfservice-ui-node",
-                  "kratos-selfservice-ui-node"
-                }
-                " with all runtime code compiled to WebAssembly, built on our
-                ory-kratos-client-wasm crate (above). Session state combines Dioxus
-                signals with a session-expiry cookie for persistence."
-              }
-            }
-            div { class: "card-actions justify-center-safe lg:justify-start",
-              a {
-                class: "btn btn-soft",
-                href: "https://github.com/justins-engineering/kratos-selfservice-wasm",
-                Icon { icon: LdGithub }
-                "GitHub"
-              }
-              a {
-                class: "btn btn-soft",
-                href: "https://hub.docker.com/r/jeseng/kratos-selfservice-wasm",
-                Icon { icon: LdContainer }
-                "Docker Hub"
-              }
-            }
-          }
-        }
-
-        div { class: "card lg:card-side bg-base-200 my-6",
-          figure { class: "lg:w-1/2",
-            img {
-              src: asset!("assets/images/departure-sign.jpg"),
-              alt: "Solar-powered cellular departure board showing real-time bus departures",
-            }
-          }
-          div { class: "card-body lg:w-1/2",
-            article { class: "flex-1",
-              h3 { class: "text-2xl card-title", "Real-time Cellular Departure Board" }
-              p { class: "text-lg font-medium mt-2",
-                "A solar-powered transit sign, updated in real time over LTE."
-              }
-              Tags { tags: vec!["Zephyr RTOS", "nRF9160", "MCUboot", "FOTA"] }
-              ul { class: "list-outside list-disc pl-8 my-2",
-                li { "Zephyr RTOS with the open-source MCUboot bootloader" }
-                li { "Firmware built, signed, and released automatically on GitHub" }
-                li {
-                  "Remote updates downloaded over the cellular network and verified
-                  on-device before install"
-                }
-              }
-            }
-            div { class: "card-actions justify-center-safe lg:justify-start",
-              a {
-                class: "btn btn-soft",
-                href: "https://github.com/umts/embedded-departure-board",
-                Icon { icon: LdGithub }
-                "GitHub"
               }
             }
           }
@@ -278,7 +211,7 @@ pub fn Projects() -> Element {
                     href: "https://media.digikey.com/pdf/Data%20Sheets/Seeed%20Technology/WS2813B_Ver.V5_10-20-19.pdf",
                     "WS2813B-V5"
                   }
-                  " LED pixels — three per segment"
+                  " LED pixels, three per segment"
                 }
                 li { "2A, 5V synchronous buck converter with a 3.8V to 32V input range" }
                 li { "Spring-clamp connectors and backup data-signal jumpers for chaining" }
@@ -290,6 +223,83 @@ pub fn Projects() -> Element {
                 href: "https://github.com/umts/neopixel-seven-segment-display",
                 Icon { icon: LdGithub }
                 "GitHub"
+              }
+            }
+          }
+        }
+      }
+
+      section { id: "developer-tools", class: "py-8",
+        h2 { class: "text-3xl font-bold", "Developer tools" }
+        div { class: "divider mt-0" }
+
+        div { class: "card bg-base-200 my-6",
+          div { class: "card-body",
+            article { class: "flex-1",
+              h3 { class: "text-2xl card-title", "Kratos Client Rust" }
+              p { class: "text-lg font-medium mt-2",
+                "An Ory Kratos API client that works in the browser."
+              }
+              Tags { tags: vec!["Rust", "WASM", "crates.io"] }
+              p { class: "my-2",
+                "A maintained fork of Ory's generated Kratos client that swaps reqwest for the
+                browser's native Fetch API when targeting WebAssembly. Published on crates.io
+                as ory-kratos-client-wasm."
+              }
+            }
+            div { class: "card-actions justify-center-safe lg:justify-start",
+              a {
+                class: "btn btn-soft",
+                href: "https://github.com/justins-engineering/kratos-client-rust",
+                Icon { icon: LdGithub }
+                "GitHub"
+              }
+              a {
+                class: "btn btn-soft",
+                href: "https://crates.io/crates/ory-kratos-client-wasm",
+                Icon { icon: LdPackage }
+                "crates.io"
+              }
+            }
+          }
+        }
+
+        div { class: "card lg:card-side bg-base-200 my-6",
+          figure { class: "lg:w-1/2",
+            img {
+              src: asset!("assets/images/kratos-selfservice-wasm.png"),
+              alt: "Screenshot of the Kratos Selfservice WASM sign-in user interface",
+            }
+          }
+          div { class: "card-body lg:w-1/2",
+            article { class: "flex-1",
+              h3 { class: "text-2xl card-title", "Kratos Selfservice WASM" }
+              p { class: "text-lg font-medium mt-2", "Kratos self-service UI, fully client-side." }
+              Tags { tags: vec!["Dioxus", "Tailwind CSS", "daisyUI", "Docker"] }
+              p { class: "my-2",
+                "A single-page recreation of Ory's "
+                a {
+                  class: "link",
+                  href: "https://github.com/ory/kratos-selfservice-ui-node",
+                  "kratos-selfservice-ui-node"
+                }
+                " with all runtime code compiled to WebAssembly, built on our
+                ory-kratos-client-wasm crate (above). Session state combines Dioxus
+                signals with a session-expiry cookie for persistence."
+              }
+            }
+            div { class: "card-actions justify-center-safe lg:justify-start",
+              a {
+                class: "btn btn-soft",
+                href: "https://github.com/justins-engineering/kratos-selfservice-wasm",
+                Icon { icon: LdGithub }
+                "GitHub"
+              }
+              a {
+                class: "btn btn-soft",
+                href: "https://hub.docker.com/r/jeseng/kratos-selfservice-wasm",
+                Icon { icon: LdContainer }
+                "Docker Hub"
               }
             }
           }
