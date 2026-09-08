@@ -14,7 +14,7 @@ pub fn Navbar() -> Element {
       nav { class: "flex items-center justify-between py-2 gap-x-4",
         a {
           class: "link link-hover mr-1",
-          href: "mailto:justin@jes.contact",
+          href: "mailto:ops@jes.contact",
           "Contact"
         }
         a {

@@ -10,12 +10,12 @@ const JSON_LD: &str = r##"{
     {
       "@type": "ProfessionalService",
       "@id": "https://justinsengineering.com/#organization",
-      "name": "Justin's Engineering Services, LLC",
+      "name": "Justin's Engineering Services LLC",
       "alternateName": "JES",
       "url": "https://justinsengineering.com/",
       "logo": "https://justinsengineering.com/images/og.png",
       "image": "https://justinsengineering.com/images/og.png",
-      "email": "justin@jes.contact",
+      "email": "ops@jes.contact",
       "telephone": "+1-413-345-6759",
       "description": "Independent engineering consultancy building PidgeIoT, an open-source IoT device management platform, and PVTA's solar real-time departure signs; consulting in Zephyr embedded firmware and full-stack Rust.",
       "founder": {
@@ -191,8 +191,9 @@ pub fn Index() -> Element {
         h2 { class: "text-5xl font-bold", "For transit agencies" }
         div { class: "divider mt-0" }
         p { class: "my-4 text-balance",
-          "I designed, built and service PVTA's three solar real-time departure signs at Amherst,
-          Holyoke and Springfield, in service since 2023 and running on PidgeIoT today."
+          "We designed, built and service PVTA's three solar real-time departure signs at
+          Amherst, Holyoke and Springfield, the first in service since 2023 and all three since
+          late 2024, running on PidgeIoT today."
         }
 
         div { class: "grid grid-cols-1 lg:grid-cols-2 gap-6",

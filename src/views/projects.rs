@@ -84,9 +84,10 @@ pub fn Projects() -> Element {
               }
               Tags { tags: vec!["Zephyr RTOS", "nRF9160", "MCUboot", "FOTA"] }
               p { class: "my-2",
-                "Three in service at PVTA (Amherst, Holyoke, Springfield) since 2023. The firmware
-                reads the agency's prediction API directly (Avail InfoPoint, then Swiftly);
-                PidgeIoT manages the devices and never holds transit data."
+                "Three in service at PVTA (Amherst, Holyoke, Springfield), the first since 2023, all
+                three since late 2024. The firmware reads the agency's prediction API directly
+                (Avail InfoPoint, then Swiftly); PidgeIoT manages the devices and never holds
+                transit data."
               }
               ul { class: "list-outside list-disc pl-8 my-2",
                 li { "Zephyr RTOS with the open-source MCUboot bootloader" }

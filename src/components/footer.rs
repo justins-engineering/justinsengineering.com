@@ -15,7 +15,7 @@ pub fn Footer() -> Element {
         }
         p {
           "© {1970 + (SystemTime::now().duration_since(UNIX_EPOCH).unwrap().as_secs()/31556926)} "
-          span { class: "text-nowrap", "Justin's Engineering Services, LLC" }
+          span { class: "text-nowrap", "Justin's Engineering Services LLC" }
         }
       }
     }
