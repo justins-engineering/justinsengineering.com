@@ -16,14 +16,16 @@ const JSON_LD: &str = r##"{
       "logo": "https://justinsengineering.com/images/og.png",
       "image": "https://justinsengineering.com/images/og.png",
       "email": "justin@jes.contact",
-      "description": "Solo engineering consultancy building PidgeIoT, an open-source IoT device management platform, and consulting in Zephyr embedded firmware and full-stack Rust.",
+      "telephone": "+1-413-345-6759",
+      "description": "Independent engineering consultancy building PidgeIoT, an open-source IoT device management platform, and PVTA's solar real-time departure signs; consulting in Zephyr embedded firmware and full-stack Rust.",
       "founder": {
         "@type": "Person",
         "name": "Justin Forgue",
-        "jobTitle": "Founder & Principal"
+        "jobTitle": "Principal"
       },
       "address": {
         "@type": "PostalAddress",
+        "addressLocality": "West Springfield",
         "addressRegion": "MA",
         "addressCountry": "US"
       },
@@ -39,7 +41,8 @@ const JSON_LD: &str = r##"{
         "ESP32",
         "Cloudflare Workers",
         "WebAssembly",
-        "Over-the-air firmware updates"
+        "Over-the-air firmware updates",
+        "Real-time transit departure signs"
       ]
     },
     {
@@ -68,7 +71,7 @@ pub fn Index() -> Element {
   rsx! {
     PageMeta {
       title: "Justin's Engineering Services | IoT & Embedded Rust",
-      description: "Builders of PidgeIoT, an open-source IoT device management platform. Consulting in Zephyr embedded firmware and full-stack Rust, from device to cloud.",
+      description: "Builders of PidgeIoT, an open-source IoT device management platform, and PVTA's solar real-time departure signs. Consulting in Zephyr embedded firmware and full-stack Rust.",
       path: "/",
     }
     document::Script { r#type: "application/ld+json", {JSON_LD} }
@@ -86,7 +89,7 @@ pub fn Index() -> Element {
             "We build "
             a { class: "link", href: "https://pidgeiot.com", "PidgeIoT" }
             ", an open-source IoT device management platform, and take on consulting work in
-            embedded firmware and full-stack Rust — from Zephyr device bring-up on real hardware
+            embedded firmware and full-stack Rust, from Zephyr device bring-up on real hardware
             to edge-cloud backends."
           }
           div { class: "flex flex-col lg:flex-row justify-center-safe gap-3",
@@ -101,6 +104,12 @@ pub fn Index() -> Element {
               to: Route::Projects {},
               aria_label: "projects",
               "Projects"
+            }
+            a {
+              class: "btn btn-accent lg:w-3/16",
+              href: "#transit",
+              aria_label: "For transit agencies",
+              "Transit"
             }
           }
         }
@@ -179,6 +188,58 @@ pub fn Index() -> Element {
         }
       }
 
+      section { id: "transit", class: "py-8",
+        h2 { class: "text-5xl font-bold", "For transit agencies" }
+        div { class: "divider mt-0" }
+        p { class: "my-4 text-balance",
+          "I designed, built and service PVTA's three solar real-time departure signs at Amherst,
+          Holyoke and Springfield, in service since 2023 and running on PidgeIoT today."
+        }
+
+        div { class: "grid grid-cols-1 lg:grid-cols-2 gap-6",
+          div { class: "card bg-base-200",
+            div { class: "card-body",
+              h3 { class: "card-title", "Retrofit" }
+              p {
+                "Displays you already own brought back to life showing live arrivals. Your
+                enclosures, poles and permits stay; we replace the electronics inside with our
+                open-source solar LED display stack. Proven at PVTA."
+              }
+            }
+          }
+          div { class: "card bg-base-200",
+            div { class: "card-body",
+              h3 { class: "card-title", "Readiness study" }
+              p {
+                "For agencies with no real-time today. Corrected static GTFS you own, fleet and
+                stop inventory, vendor-neutral comparison of trackers vs. a small CAD/AVL package
+                with five-year costs, procurement and funding memo, a spec you can bid to anyone.
+                Typically under $10,000; c.30B direct purchase order, no quotes required."
+              }
+            }
+          }
+          div { class: "card bg-base-200",
+            div { class: "card-body",
+              h3 { class: "card-title", "Corridor study" }
+              p {
+                "Stop-by-stop survey, structural feasibility by a Massachusetts-licensed PE, solar
+                and winter performance modelling, vendor-neutral procurement-ready spec with cost
+                model. Typically under $50,000; c.30B three-quote territory, no advertised bid."
+              }
+            }
+          }
+          div { class: "card bg-base-200",
+            div { class: "card-body",
+              h3 { class: "card-title", "New installs" }
+              p {
+                "Where warranted, NRTL-listed display hardware through certified OEM partners,
+                installed to PE-stamped mounting details, driven by our open platform."
+              }
+            }
+          }
+        }
+      }
+
       section { id: "pidgeiot", class: "py-8",
         h2 { class: "text-5xl font-bold", "PidgeIoT" }
         div { class: "divider mt-0" }
@@ -229,10 +290,13 @@ pub fn Index() -> Element {
         h2 { class: "text-5xl font-bold", "About" }
         div { class: "divider mt-0" }
         p { class: "my-4 text-balance",
-          "Justin's Engineering Services, LLC is the solo consultancy of Justin Forgue,
-          Founder & Principal, based in western Massachusetts, US. For project inquiries, "
-          a { class: "link", href: "mailto:justin@jes.contact", "get in touch" }
-          "."
+          "Justin's Engineering Services LLC is the independent engineering consultancy of
+          Justin Forgue, Principal, in West Springfield, Massachusetts."
+        }
+        p { class: "my-4",
+          a { class: "link text-nowrap", href: "tel:+14133456759", "(413) 345-6759" }
+          " · "
+          a { class: "link", href: "mailto:ops@jes.contact", "ops@jes.contact" }
         }
       }
     }
