@@ -9,6 +9,10 @@ pub fn Footer() -> Element {
   rsx! {
     footer { class: "footer footer-horizontal footer-center bg-base-200 text-base-content lg:p-2",
       aside {
+        p { class: "text-balance",
+          "Justin's Engineering Services LLC. Montana LLC registered in Massachusetts. COMMBUYS
+          registered, SBPP enrolled."
+        }
         p {
           "© {1970 + (SystemTime::now().duration_since(UNIX_EPOCH).unwrap().as_secs()/31556926)} "
           span { class: "text-nowrap", "Justin's Engineering Services, LLC" }
