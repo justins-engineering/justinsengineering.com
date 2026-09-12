@@ -190,10 +190,15 @@ pub fn Index() -> Element {
       section { id: "transit", class: "py-8",
         h2 { class: "text-5xl font-bold", "For transit agencies" }
         div { class: "divider mt-0" }
+        p { class: "text-2xl font-bold text-balance",
+          "Your riders deserve real-time. You may already own the signs."
+        }
         p { class: "my-4 text-balance",
-          "We designed, built and service PVTA's three solar real-time departure signs at
-          Amherst, Holyoke and Springfield, the first in service since 2023 and all three since
-          late 2024, running on PidgeIoT today."
+          "We retrofit the signs your agency already owns to show live arrivals from your own
+          prediction feed, without replacing the infrastructure around them. Our principal
+          designed and built PVTA's three solar real-time departure signs at Amherst, Holyoke
+          and Springfield as a UMass Transit employee, the first in service since 2023 and all
+          three since late 2024; all three run on PidgeIoT today."
         }
 
         div { class: "grid grid-cols-1 lg:grid-cols-2 gap-6",
@@ -201,9 +206,10 @@ pub fn Index() -> Element {
             div { class: "card-body",
               h3 { class: "card-title", "Retrofit" }
               p {
-                "Displays you already own brought back to life showing live arrivals. Your
-                enclosures, poles and permits stay; we replace the electronics inside with our
-                open-source solar LED display stack. Proven at PVTA."
+                "Displays you already own, dark, stale or orphaned by a vendor contract that
+                ended, showing live arrivals from your feed again. Your enclosures, poles and
+                permits stay; we replace the electronics inside with our open-source solar LED
+                display stack. Running at PVTA. Priced per sign."
               }
             }
           }
@@ -211,10 +217,10 @@ pub fn Index() -> Element {
             div { class: "card-body",
               h3 { class: "card-title", "Readiness study" }
               p {
-                "For agencies with no real-time today. Corrected static GTFS you own, fleet and
-                stop inventory, vendor-neutral comparison of trackers vs. a small CAD/AVL package
-                with five-year costs, procurement and funding memo, a spec you can bid to anyone.
-                Typically under $10,000; c.30B direct purchase order, no quotes required."
+                "For an agency with no real-time yet. Your static GTFS verified, a fleet and stop
+                inventory, a vendor-neutral comparison of trackers against a small CAD/AVL
+                package with five-year costs, and a procurement-ready spec naming the MassDOT
+                programs that fund it. Sixty days. Fixed fee, quoted to scope."
               }
             }
           }
@@ -222,9 +228,10 @@ pub fn Index() -> Element {
             div { class: "card-body",
               h3 { class: "card-title", "Corridor study" }
               p {
-                "Stop-by-stop survey, structural feasibility by a Massachusetts-licensed PE, solar
-                and winter performance modelling, vendor-neutral procurement-ready spec with cost
-                model. Typically under $50,000; c.30B three-quote territory, no advertised bid."
+                "Before you buy new signage: stop-by-stop survey, structural feasibility stamped
+                by a Massachusetts-licensed PE as a subconsultant, solar and winter performance
+                modelling, and a vendor-neutral spec with a cost model that any compliant vendor
+                can bid. Fixed fee, quoted to scope."
               }
             }
           }
@@ -232,9 +239,30 @@ pub fn Index() -> Element {
             div { class: "card-body",
               h3 { class: "card-title", "New installs" }
               p {
-                "Where warranted, NRTL-listed display hardware through certified OEM partners,
-                installed to PE-stamped mounting details, driven by our open platform."
+                "Where new displays are warranted, NRTL-listed hardware from certified OEMs,
+                installed to PE-stamped mounting details and driven by our open platform, so the
+                certification burden sits with the hardware maker and the data layer stays
+                yours. Quoted from study data."
               }
+            }
+          }
+        }
+
+        div { class: "card bg-base-200 my-6",
+          div { class: "card-body",
+            h3 { class: "text-2xl card-title", "Free 15-minute sign modernization assessment" }
+            p { class: "my-2",
+              "Bring us one sign. We'll tell you what it would take to make it live, from your
+              existing hardware, your existing prediction feed and your existing power and
+              network. No obligation."
+            }
+            div { class: "card-actions justify-center-safe lg:justify-start",
+              a {
+                class: "btn btn-primary",
+                href: "mailto:ops@jes.contact?subject=15-minute%20sign%20assessment&body=Agency%3A%0ASign%20or%20stop%3A%0A",
+                "Book the assessment"
+              }
+              a { class: "btn btn-soft", href: "tel:+14133456759", "(413) 345-6759" }
             }
           }
         }
