@@ -17,7 +17,7 @@ const JSON_LD: &str = r##"{
       "image": "https://justinsengineering.com/images/og.png",
       "email": "ops@jes.contact",
       "telephone": "+1-413-345-6759",
-      "description": "Independent engineering consultancy building PidgeIoT, an open-source IoT device management platform, and PVTA's solar real-time departure signs; consulting in Zephyr embedded firmware and full-stack Rust.",
+      "description": "Independent engineering consultancy building PidgeIoT, an open-source IoT device management platform that PVTA's three solar real-time departure signs run on; consulting in Zephyr embedded firmware and full-stack Rust.",
       "founder": {
         "@type": "Person",
         "name": "Justin Forgue",
@@ -71,7 +71,7 @@ pub fn Index() -> Element {
   rsx! {
     PageMeta {
       title: "Justin's Engineering Services | IoT & Embedded Rust",
-      description: "Builders of PidgeIoT, an open-source IoT device management platform, and PVTA's solar real-time departure signs. Consulting in Zephyr embedded firmware and full-stack Rust.",
+      description: "Builders of PidgeIoT, an open-source IoT device management platform that PVTA's three solar real-time departure signs run on. Consulting in Zephyr embedded firmware and full-stack Rust.",
       path: "/",
     }
     document::Script { r#type: "application/ld+json", {JSON_LD} }
