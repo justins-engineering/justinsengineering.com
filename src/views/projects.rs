@@ -42,7 +42,6 @@ pub fn Projects() -> Element {
               div { class: "flex flex-wrap items-center gap-3",
                 h3 { class: "text-2xl card-title", "PidgeIoT" }
                 span { class: "badge badge-accent", "Flagship" }
-                span { class: "badge badge-outline", "Free while in beta" }
               }
               p { class: "text-lg font-medium mt-2", "IoT device management, without the lock-in." }
               Tags { tags: vec!["Rust", "Cloudflare Workers", "Dioxus / WASM", "AGPL-3.0"] }

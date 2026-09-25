@@ -276,7 +276,7 @@ pub fn Index() -> Element {
               h3 { class: "text-2xl card-title mb-4", "IoT device management, without the lock-in" }
               p { class: "my-4",
                 "PidgeIoT is our flagship product: an open-source (AGPL-3.0) IoT device management
-                platform, publicly launched in July 2026 and free while in beta."
+                platform, publicly launched in July 2026."
               }
               ul { class: "list-outside list-disc pl-8",
                 li { "Device provisioning with per-device Ed25519 keypairs and compact binary tokens" }

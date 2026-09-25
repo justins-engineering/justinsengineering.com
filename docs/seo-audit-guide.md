@@ -58,7 +58,7 @@ Site facts:
   pages carry no robots meta at all (absence = default `all`).
 - JSON-LD inventory: landing page (`/`) only — one `application/ld+json` script
   with an `@graph` of ProfessionalService + WebSite + SoftwareApplication (Offer
-  price 0, free while in beta). Defined as the `JSON_LD` const in
+  price 0). Defined as the `JSON_LD` const in
   `$SRC/views/index.rs`.
 - `robots.txt` is `Allow: /` plus a `Sitemap:` line; there is **no llms.txt**. The
   sitemap is a static, hand-maintained file (`$PUBLIC_DIR/sitemap.xml`) with no
