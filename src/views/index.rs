@@ -219,7 +219,7 @@ pub fn Index() -> Element {
                 "For an agency with no real-time yet. Your static GTFS verified, a fleet and stop
                 inventory, a vendor-neutral comparison of trackers against a small CAD/AVL
                 package with five-year costs, and a procurement-ready spec naming the MassDOT
-                programs that fund it. Sixty days. Fixed fee, quoted to scope."
+                programs to check it against. Sixty days. Fixed fee, quoted to scope."
               }
             }
           }
