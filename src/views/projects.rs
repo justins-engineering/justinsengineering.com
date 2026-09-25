@@ -19,14 +19,15 @@ pub fn Projects() -> Element {
   rsx! {
     PageMeta {
       title: "Projects | Justin's Engineering Services",
-      description: "Open-source software and hardware projects: PidgeIoT device management, PVTA's solar real-time departure signs, the pigeon Zephyr library, Rust WASM clients, and custom nRF9160 hardware designs.",
+      description: "Open-source projects: PidgeIoT device management, the pigeon Zephyr library, Rust WASM clients, and the PVTA departure signs our principal designed and built as a UMass Transit employee.",
       path: "/projects/",
     }
     main { class: "flex-1 py-8 px-2 lg:px-8",
       header { class: "pb-4",
         h1 { "Projects" }
         p { class: "my-4 text-balance",
-          "Open-source software and hardware we build and maintain. Everything here lives on "
+          "Open-source software we build and maintain, and the PVTA departure signs our principal
+          designed and built as a UMass Transit employee. Everything here lives on "
           a { class: "link", href: "https://github.com/justins-engineering", "GitHub" }
           ". Start with PidgeIoT, our flagship platform."
         }
@@ -149,6 +150,10 @@ pub fn Projects() -> Element {
       section { id: "hardware", class: "py-8",
         h2 { class: "text-3xl font-bold", "Hardware" }
         div { class: "divider mt-0" }
+        p { class: "my-4 text-balance",
+          "The display boards inside PVTA's departure signs, designed by our principal as a UMass
+          Transit employee."
+        }
 
         div { class: "card lg:card-side bg-base-200 my-6",
           figure { class: "lg:w-1/2",
