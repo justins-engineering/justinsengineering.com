@@ -227,10 +227,11 @@ pub fn Index() -> Element {
             div { class: "card-body",
               h3 { class: "card-title", "Corridor study" }
               p {
-                "Before you buy new signage: stop-by-stop survey, structural feasibility stamped
-                by a Massachusetts-licensed PE as a subconsultant, solar and winter performance
-                modelling, and a vendor-neutral spec with a cost model that any compliant vendor
-                can bid. Fixed fee, quoted to scope."
+                "Before you buy new signage: stop-by-stop survey, a per-stop structural
+                feasibility review, solar and winter performance modelling, and a vendor-neutral
+                spec with a cost model that any compliant vendor can bid. A stamped detail from a
+                Massachusetts-licensed engineer is arranged where a site requires one. Fixed fee,
+                quoted to scope."
               }
             }
           }
