@@ -239,10 +239,8 @@ pub fn Index() -> Element {
             div { class: "card-body",
               h3 { class: "card-title", "New installs" }
               p {
-                "Where new displays are warranted, NRTL-listed hardware from certified OEMs,
-                installed to PE-stamped mounting details and driven by our open platform, so the
-                certification burden sits with the hardware maker and the data layer stays
-                yours. Quoted from study data."
+                "Where new displays are warranted, NRTL-listed hardware from certified OEMs, so
+                the certification burden sits with the hardware maker. Quoted from study data."
               }
             }
           }
