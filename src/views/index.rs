@@ -208,8 +208,7 @@ pub fn Index() -> Element {
               p {
                 "Displays you already own, dark, stale or orphaned by a vendor contract that
                 ended, showing live arrivals from your feed again. Your enclosures, poles and
-                permits stay; we replace the electronics inside with our open-source solar LED
-                display stack. Running at PVTA. Priced per sign."
+                permits stay; we replace the electronics inside. Priced per sign."
               }
             }
           }
