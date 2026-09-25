@@ -29,7 +29,6 @@ const JSON_LD: &str = r##"{
         "addressRegion": "MA",
         "addressCountry": "US"
       },
-      "areaServed": "Worldwide",
       "sameAs": ["https://github.com/justins-engineering"],
       "knowsAbout": [
         "Embedded firmware",
